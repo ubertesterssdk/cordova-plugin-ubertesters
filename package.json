@@ -1,0 +1,39 @@
+{
+  "name": "cordova-plugin-ubertesters",
+  "version": "2.0.12",
+  "description": "Cordova android plugin for ubertesters",
+  "scripts": {
+    "jshint": "node node_modules/jshint/bin/jshint www && node node_modules/jshint/bin/jshint src && node node_modules/jshint/bin/jshint tests",
+    "test": "npm run jshint"
+  },
+  "devDependencies": {
+    "jshint": "^2.6.0"
+  },
+  "cordova": {
+    "id": "cordova-plugin-ubertesters",
+    "platforms": [
+      "android"
+    ]
+  },
+  "engines": {
+    "cordovaDependencies": {
+      "2.0.0": {
+        "cordova-android": ">=3.6.0"
+      },
+      "4.0.0": {
+        "cordova-android": ">=3.6.0",
+        "cordova-windows": ">=4.4.0"
+      },
+      "6.0.0": {
+        "cordova": ">100"
+      }
+    }
+  },
+  "author": "Ubertesters",
+  "license": "ISC",
+  "types": "./types/index.d.ts",
+  "typing": "./types/index.d.ts",
+  "dependencies": {
+    "tcs": "^10.0.0"
+  }
+}

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    id="cordova-plugin-ubertesters" 
+    version="2.0.12">
+
+
+    <name>Ubertesters-Android</name>
+    <description>Cordova android plugin for ubertesters</description>
+    <license>Apache 2.0 License</license>
+    
+    <engines>
+        <engine name="cordova-android" version=">=3.6.0" /><!-- Requires CordovaPlugin.preferences -->
+        <engine name="cordova-windows" version=">=4.4.0" />
+    </engines>
+    
+    <js-module  src="www/Ubertesters.js" name="Ubertesters">
+        <clobbers target="UbertesterAndroid" />
+    </js-module>
+    <!--android-->
+	<platform name="android">	
+	
+		<config-file target="res/xml/config.xml" parent="/*">
+            <feature name="UbertestersCordova">
+                <param name="android-package" value="cordova.plugin.ubertesters.UbertestersCordova"/>
+            </feature>
+        </config-file>
+	
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.GET_TASKS"/>
+			<uses-permission android:name="android.permissicon.WRITE_EXTERNAL_STORAGE"/>
+			<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+           <!--  <application>
+               <meta-data android:name="ubertesters_organization_token" android:value="your organization token"/>
+            </application> -->
+		</config-file>
+		
+		<source-file src="src/android/libs/ubertesters.sdk.android.jar" target-dir="libs"  framework="true"/>
+		<source-file src="src/android/UbertestersCordova.java" target-dir="src/cordova/plugin/ubertesters" />
+		
+
+	</platform>
+
+</plugin>
